@@ -1,7 +1,7 @@
 /**
  * @file bmp280.h
  * @author FernandesKA (i@kfernandes.ru)
- * @brief 
+ * @brief  register map for BMP280
  * @version 0.1
  * @date 2025-12-02
  * 
@@ -11,7 +11,8 @@
 #ifndef BMP280_H
 #define BMP280_H
 
-/* BMP280 specific registers */
+#define BMP280_REG_CHIP_ID 0x58
+
 #define BMP280_REG_TEMP_XLSB		0xFC
 #define BMP280_REG_TEMP_LSB		0xFB
 #define BMP280_REG_TEMP_MSB		0xFA
@@ -19,7 +20,6 @@
 #define BMP280_REG_PRESS_LSB		0xF8
 #define BMP280_REG_PRESS_MSB		0xF7
 
-/* Helper mask to truncate excess 4 bits on pressure and temp readings */
 #define BMP280_MEAS_TRIM_MASK		GENMASK(24, 4)
 
 #define BMP280_REG_CONFIG		0xF5
@@ -63,13 +63,11 @@
 #define BMP280_MODE_FORCED		1
 #define BMP280_MODE_NORMAL		3
 
-/* BME280 specific registers */
 #define BME280_REG_HUMIDITY_LSB		0xFE
 #define BME280_REG_HUMIDITY_MSB		0xFD
 
 #define BME280_REG_CTRL_HUMIDITY	0xF2
 
-/* Due to non linear mapping, and data sizes we can't do a bulk read */
 #define BME280_REG_COMP_H1		0xA1
 #define BME280_REG_COMP_H2		0xE1
 #define BME280_REG_COMP_H3		0xE3
