@@ -21,10 +21,12 @@ module:
  - bmp280.c # Main driver implementation
  - bmp280.h # Register definitions and ioctl structures
  - Makefile # Kernel module build
+ 
 userspace:
  - bmp280_test.c # Test application
  - bmp280.h # Shared header
  - Makefile # Userspace build
+
 dts: # Device tree examples
 
 ## Author
